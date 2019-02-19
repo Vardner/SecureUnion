@@ -1,0 +1,94 @@
+.Date {
+  color: #fff;
+  font-size: 18px;
+  white-space: nowrap;
+  float: right;
+  border: 1px solid rgba(255,255,255,.8);
+  padding: 10px;
+  min-width: 75px;
+  height: 40px;
+  text-align: center;
+  line-height: 20px;
+  position: relative;
+  margin-top: 10px;
+
+  &[data-date="Clock"] {
+
+    &:after {
+      content: 'Current time';
+      color: #000;
+      background: #FFF;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 1px;
+      font-size: 13px;
+      font-family: Montserrat;
+      font-weight: bold;
+      line-height: 40px;
+      transition: all 0.3s ease-in;
+      opacity: 0;
+    }
+
+    &:hover:after {
+      opacity: 1;
+    }
+  }
+
+  &[data-date="Date"] {
+
+    &:after {
+      content: 'Current date';
+      color: #000;
+      background: #FFF;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 1px;
+      font-size: 13px;
+      font-family: Montserrat;
+      font-weight: bold;
+      line-height: 40px;
+      transition: all 0.3s ease-in;
+      opacity: 0;
+    }
+
+    &:hover:after {
+      opacity: 1;
+    }
+  }
+
+  &[data-date="Stopwatch"] {
+
+    &:after {
+      content: 'Time on website';
+      color: #000;
+      background: #FFF;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 1px;
+      font-size: 13px;
+      font-family: Montserrat;
+      font-weight: bold;
+      line-height: 40px;
+      transition: all 0.3s ease-in;
+      opacity: 0;
+    }
+
+    &:hover:after {
+      opacity: 1;
+    }
+  }
+
+  &-item{
+    margin: 0;
+    padding: 0;
+  }
+}

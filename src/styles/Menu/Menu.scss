@@ -1,0 +1,105 @@
+.Menu {
+  font-size: 17px;
+  color: #356ED5;
+
+  &-item {
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+
+    .Menu--sublist > & {
+      padding: 10px 10px;
+    }
+
+    &.disabled  a{
+      color: #7B7E7F;;
+      cursor: default;
+    }
+  }
+
+  &-link {
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: inherit;
+    letter-spacing: 0.5px;
+    color: #fff;
+
+
+    .Menu-item:not(.disabled) > &:hover {
+      text-shadow: 0 0 16px #f7992f;
+      cursor: pointer;
+      color: #f7992f;
+    }
+  }
+
+  &-sublist {
+    color: #6DC2F4;
+    font-size: 14px;
+    max-height: 0;
+    transform: scaleY(0);
+    transition: all 0.3s ease-in-out;
+
+    .active > & {
+      max-height: 1000px;
+      transform: scaleY(1);
+    }
+  }
+
+  &--tablet {
+    padding: 0 10px;
+    font-size: 18px;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: calc(100% + 3px);
+    left: 0;
+    max-height: 200px;
+    overflow-y: scroll;
+    min-width: 100%;
+    z-index: 1;
+    box-sizing: border-box;
+    transform-origin: top;
+    transform: rotateX(90deg);
+    transition: all 0.3s linear;
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      transform: rotateX(0deg);
+    }
+
+    & .Menu-item {
+      border-bottom: 1px solid rgba(255, 255, 255, .7);
+      padding: 0 10px;
+      min-height: 40px;
+      white-space: nowrap;
+      background: #fff;
+
+      &:last-child {
+        border: none;
+      }
+    }
+
+    & .Menu-link {
+      text-shadow: initial;
+      vertical-align: -50%;
+      font-weight: bold;
+      color: #000;
+    }
+
+    & .Menu-sublist {
+      transform-origin: top;
+
+      .Menu-item{
+        border-bottom: 1px dashed white;
+        color: white;
+
+        &:last-child {
+          border: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.Page {
+  position: relative;
+  overflow: hidden;
+  height: calc(100% - 120px);
+  z-index: 0;
+  @include clearfix();
+
+  & > [class *="cell-"] {
+    padding: 0;
+    height: 100%;
+  }
+
+  & > [data-container="Main"] {
+    transition: all 0.4s;
+    perspective: 1000px;
+    perspective-origin: right;
+
+    @media screen and (max-width: 768px) {
+      perspective-origin: center;
+    }
+  }
+
+  & > .cell-none[data-container=Sidebar] {
+    width: 0;
+    display: inline-block;
+  }
+
+  & > [data-container=Sidebar] {
+    transition: width 0.4s;
+    perspective: 3000px;
+  }
+
+  &-wrap {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  &-content {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.4s ease;
+    padding: 20px 10px;
+
+    &:after {
+      content: '';
+      width: 2px;
+      position: absolute;
+      background-color: white;
+      height: 100%;
+      top: 0;
+      right: calc(100% + 1px);
+    }
+
+    &.perspective {
+      transform: rotateY(-11deg);
+      transform-origin: right;
+
+      @media screen and (max-width: 768px) {
+        transform: rotateX(30deg) translateY(260px);
+        transform-origin: center;
+      }
+    }
+  }
+}
+
+
+
